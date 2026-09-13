@@ -9,7 +9,7 @@ export default function Footer() {
           className="text-[12.5px] font-light tracking-[.05em]"
           style={{ color: 'rgba(250,250,249,.5)' }}
         >
-          Built with React · Hosted on GCP
+          Built with Next.js · Hosted on Vercel
         </span>
         <div className="flex gap-[26px]">
           <a
