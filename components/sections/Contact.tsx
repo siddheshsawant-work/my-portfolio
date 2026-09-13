@@ -30,8 +30,11 @@ export default function Contact() {
       const params = new URLSearchParams(fields as Record<string, string>);
       await fetch(`${WEBHOOK_URL}?${params.toString()}`, { mode: 'no-cors' });
       setStatus('sent');
+      setFields({ name: '', email: '', subject: 'Job Opportunity', message: '' });
+      setTimeout(() => setStatus('idle'), 5000);
     } catch {
       setStatus('error');
+      setTimeout(() => setStatus('idle'), 5000);
     }
   };
 
