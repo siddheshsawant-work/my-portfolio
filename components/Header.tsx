@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
 
 const NAV_LINKS = [
   { href: '#about', label: 'About', id: 'about' },
@@ -19,15 +18,14 @@ const SECTION_IDS = ['top', 'about', 'skills', 'experience', 'projects', 'code',
 export default function Header() {
   const [active, setActive] = useState('top');
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+  const [menuOpen, setMenuOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
 
-  // Sync theme state from DOM (pre-paint script may have already set it)
   useEffect(() => {
     const t = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
     setTheme(t);
   }, []);
 
-  // Measure header height → --hdr-h CSS variable
   useEffect(() => {
     const header = headerRef.current;
     if (!header) return;
@@ -41,7 +39,6 @@ export default function Header() {
     return () => ro.disconnect();
   }, []);
 
-  // Scroll spy — last section whose top is ≤ 140px
   useEffect(() => {
     const onScroll = () => {
       let cur = 'top';
@@ -56,6 +53,14 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  // Close menu when user starts scrolling
+  useEffect(() => {
+    if (!menuOpen) return;
+    const close = () => setMenuOpen(false);
+    window.addEventListener('scroll', close, { passive: true, once: true });
+    return () => window.removeEventListener('scroll', close);
+  }, [menuOpen]);
+
   const toggleTheme = () => {
     const next = theme === 'dark' ? 'light' : 'dark';
     setTheme(next);
@@ -64,7 +69,6 @@ export default function Header() {
     try { localStorage.setItem('ss-site-theme', next); } catch {}
   };
 
-  // contact nav item also lights up for the linkedin section
   const isActive = (id: string) => {
     if (id === 'contact') return active === 'contact' || active === 'linkedin';
     return active === id;
@@ -76,9 +80,7 @@ export default function Header() {
       style={{ background: 'var(--bg-blur)', borderBottom: '1px solid var(--line)' }}
       className="fixed top-0 left-0 right-0 z-50 backdrop-blur-[8px]"
     >
-      <nav
-        className="nav-inner max-w-[1180px] mx-auto px-8 h-[76px] flex items-center justify-between gap-6"
-      >
+      <nav className="nav-inner max-w-[1180px] mx-auto px-8 h-[76px] flex items-center justify-between gap-6">
         {/* Wordmark */}
         <a
           href="#top"
@@ -88,7 +90,7 @@ export default function Header() {
           Siddhesh Sawant
         </a>
 
-        {/* Right group: links + toggle + CTA */}
+        {/* Desktop: links + toggle + CTA */}
         <div className="nav-group flex items-center gap-[34px]">
           <div className="nav-links flex items-center gap-[22px]">
             {NAV_LINKS.map(({ href, label, id }) => (
@@ -106,7 +108,6 @@ export default function Header() {
             ))}
           </div>
 
-          {/* Theme toggle */}
           <button
             type="button"
             onClick={toggleTheme}
@@ -122,7 +123,6 @@ export default function Header() {
             </span>
           </button>
 
-          {/* Download Resume CTA */}
           <a
             href="#resume"
             className="btn-gold rounded-[6px] text-[13px] font-medium tracking-[.06em] uppercase px-[22px] py-[13px] whitespace-nowrap"
@@ -130,7 +130,71 @@ export default function Header() {
             Download Resume
           </a>
         </div>
+
+        {/* Mobile: theme toggle + hamburger */}
+        <div className="mobile-nav-controls hidden items-center gap-[10px]">
+          <button
+            type="button"
+            onClick={toggleTheme}
+            title={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
+            aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
+            className="btn-toggle flex-none w-9 h-9 rounded-full flex items-center justify-center cursor-pointer p-0"
+          >
+            <span
+              style={{ border: '1.5px solid currentColor' }}
+              className="w-[16px] h-[16px] rounded-full overflow-hidden block relative"
+            >
+              <span className="absolute top-0 bottom-0 left-0 w-1/2 bg-current" />
+            </span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setMenuOpen((o) => !o)}
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={menuOpen}
+            className="btn-toggle w-9 h-9 rounded-[6px] flex flex-col items-center justify-center gap-[5px] cursor-pointer p-0"
+          >
+            <span style={{ width: '18px', height: '1.5px', background: 'currentColor', transition: 'transform 200ms, opacity 200ms', transform: menuOpen ? 'translateY(6.5px) rotate(45deg)' : 'none', display: 'block' }} />
+            <span style={{ width: '18px', height: '1.5px', background: 'currentColor', transition: 'opacity 200ms', opacity: menuOpen ? 0 : 1, display: 'block' }} />
+            <span style={{ width: '18px', height: '1.5px', background: 'currentColor', transition: 'transform 200ms, opacity 200ms', transform: menuOpen ? 'translateY(-6.5px) rotate(-45deg)' : 'none', display: 'block' }} />
+          </button>
+        </div>
       </nav>
+
+      {/* Mobile dropdown */}
+      {menuOpen && (
+        <div
+          style={{ background: 'var(--bg-blur)', borderTop: '1px solid var(--line)' }}
+          className="mobile-menu"
+        >
+          <div className="px-6 py-2 flex flex-col">
+            {NAV_LINKS.map(({ href, label, id }) => (
+              <a
+                key={id}
+                href={href}
+                onClick={() => setMenuOpen(false)}
+                style={{
+                  borderBottom: '1px solid var(--line)',
+                  color: isActive(id) ? 'var(--gold)' : 'var(--txt)',
+                }}
+                className="text-[13px] font-normal tracking-[.08em] uppercase py-[14px] block"
+              >
+                {label}
+              </a>
+            ))}
+            <div className="py-5">
+              <a
+                href="#resume"
+                onClick={() => setMenuOpen(false)}
+                className="btn-gold rounded-[6px] text-[13px] font-medium tracking-[.06em] uppercase px-[22px] py-[13px] inline-block"
+              >
+                Download Resume
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

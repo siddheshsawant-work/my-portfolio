@@ -26,7 +26,7 @@ export default function Skills() {
 
         <div className="flex flex-col">
           {skills.map((skill) => (
-            <div key={skill.num} style={rowStyle}>
+            <div key={skill.num} style={rowStyle} className="skill-row">
               {/* Left: index + category name */}
               <div className="flex items-baseline gap-[14px]">
                 <span

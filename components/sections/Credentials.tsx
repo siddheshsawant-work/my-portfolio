@@ -96,22 +96,20 @@ export default function Credentials() {
               <div
                 key={cert.name}
                 style={{ borderTop: '1px solid var(--line)' }}
-                className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-3 py-5"
+                className="flex flex-col py-5 gap-[5px]"
               >
-                <div>
-                  <h4
-                    style={{ color: 'var(--navy)', margin: '0 0 5px' }}
-                    className="text-[15.5px] font-medium"
-                  >
-                    {cert.name}
-                  </h4>
-                  <p
-                    style={{ color: 'var(--txt)', opacity: 0.7, margin: 0 }}
-                    className="text-[13.5px] font-light"
-                  >
-                    {cert.issuer}
-                  </p>
-                </div>
+                <h4
+                  style={{ color: 'var(--navy)', margin: 0 }}
+                  className="text-[15.5px] font-medium"
+                >
+                  {cert.name}
+                </h4>
+                <p
+                  style={{ color: 'var(--txt)', opacity: 0.7, margin: 0 }}
+                  className="text-[13.5px] font-light"
+                >
+                  {cert.issuer}
+                </p>
                 <span
                   style={{ color: 'var(--gold)', fontFamily: 'ui-monospace, Menlo, monospace' }}
                   className="text-[12px]"

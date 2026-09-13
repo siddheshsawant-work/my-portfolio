@@ -175,9 +175,9 @@ export default function Contact() {
             <div>
               <p
                 style={{ color: 'var(--gold)', margin: '0 0 10px' }}
-                className="text-[11.5px] font-medium tracking-[.14em] uppercase"
+                className="text-[10.5px] font-medium tracking-[.14em] uppercase"
               >
-                Prefer email?
+                Email
               </p>
               <a
                 href="mailto:siddheshsawant5789@gmail.com"
@@ -225,7 +225,7 @@ export default function Contact() {
                 Location
               </p>
               <p style={{ color: 'var(--txt)', margin: 0 }} className="text-[15px] leading-[1.8] font-light">
-                Mumbai, India — open to remote and relocation
+                Mumbai, India and open to remote
               </p>
             </div>
           </div>
