@@ -2,6 +2,8 @@
 
 import { useState, FormEvent } from 'react';
 
+const WEBHOOK_URL = process.env.NEXT_PUBLIC_CONTACT_WEBHOOK_URL ?? '';
+
 function FieldLabel({ children }: { children: React.ReactNode }) {
   return (
     <span
@@ -14,11 +16,23 @@ function FieldLabel({ children }: { children: React.ReactNode }) {
 }
 
 export default function Contact() {
-  const [sent, setSent] = useState(false);
+  const [fields, setFields] = useState({ name: '', email: '', subject: 'Job Opportunity', message: '' });
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
 
-  const onSubmit = (e: FormEvent) => {
+  const set = (k: keyof typeof fields) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
+    setFields((f) => ({ ...f, [k]: e.target.value }));
+
+  const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    setSent(true);
+    if (!fields.name || !fields.email || !fields.message) return;
+    setStatus('sending');
+    try {
+      const body = new URLSearchParams(fields as Record<string, string>);
+      await fetch(WEBHOOK_URL, { method: 'POST', body, mode: 'no-cors' });
+      setStatus('sent');
+    } catch {
+      setStatus('error');
+    }
   };
 
   return (
@@ -74,7 +88,10 @@ export default function Contact() {
                 <FieldLabel>Name</FieldLabel>
                 <input
                   type="text"
+                  required
                   placeholder="Your name"
+                  value={fields.name}
+                  onChange={set('name')}
                   style={{
                     border: 0,
                     borderBottom: '1.5px solid var(--field-line)',
@@ -90,7 +107,10 @@ export default function Contact() {
                 <FieldLabel>Email</FieldLabel>
                 <input
                   type="email"
+                  required
                   placeholder="you@company.com"
+                  value={fields.email}
+                  onChange={set('email')}
                   style={{
                     border: 0,
                     borderBottom: '1.5px solid var(--field-line)',
@@ -108,6 +128,8 @@ export default function Contact() {
             <label className="flex flex-col gap-[9px]">
               <FieldLabel>Subject</FieldLabel>
               <select
+                value={fields.subject}
+                onChange={set('subject')}
                 style={{
                   border: 0,
                   borderBottom: '1.5px solid var(--field-line)',
@@ -131,7 +153,10 @@ export default function Contact() {
               <FieldLabel>Message</FieldLabel>
               <textarea
                 rows={5}
+                required
                 placeholder="A few lines about the role or idea"
+                value={fields.message}
+                onChange={set('message')}
                 style={{
                   border: '1.5px solid var(--field-line)',
                   background: 'var(--surface)',
@@ -149,13 +174,19 @@ export default function Contact() {
             <div className="flex items-center gap-5 flex-wrap">
               <button
                 type="submit"
-                className="btn-gold rounded-[6px] text-[13.5px] font-medium tracking-[.08em] uppercase px-[38px] py-[17px] cursor-pointer"
+                disabled={status === 'sending' || status === 'sent'}
+                className="btn-gold rounded-[6px] text-[13.5px] font-medium tracking-[.08em] uppercase px-[38px] py-[17px] cursor-pointer disabled:opacity-60 disabled:cursor-default"
               >
-                Send Message
+                {status === 'sending' ? 'Sending…' : status === 'sent' ? 'Sent ✓' : 'Send Message'}
               </button>
-              {sent && (
+              {status === 'sent' && (
                 <span style={{ color: 'var(--navy)' }} className="text-[13.5px] font-normal">
                   Thanks — I&apos;ll be in touch shortly.
+                </span>
+              )}
+              {status === 'error' && (
+                <span style={{ color: '#c0392b' }} className="text-[13.5px] font-normal">
+                  Something went wrong — please email me directly.
                 </span>
               )}
             </div>
