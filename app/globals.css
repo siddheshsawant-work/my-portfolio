@@ -1,26 +1,342 @@
 @import "tailwindcss";
 
+/* ── Design Tokens: Default palette — Navy & Gold (dark) ── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #0A1220;
+  --bg-blur: rgba(10,18,32,.95);
+  --surface: #101B2C;
+  --txt: #CFCCC5;
+  --navy: #EFECE5;
+  --line: rgba(239,236,229,.14);
+  --line-soft: rgba(239,236,229,.08);
+  --field-line: rgba(239,236,229,.26);
+  --stripe: rgba(239,236,229,.06);
+  --ph-txt: rgba(239,236,229,.5);
+  --ph-fill: #101B2C;
+  --deep: #060C16;
+  --deep-card: #0D1726;
+  --gold: #D3A94A;
+  --gold-hover: #e0b75a;
+  --gold-on-deep: #D3A94A;
+  --gold-txt: #0A1220;
+  --shadow: rgba(0,0,0,.55);
+  --hdr-h: 76px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Light theme */
+:root[data-theme="light"] {
+  --bg: #FAFAF9;
+  --bg-blur: rgba(250,250,249,.94);
+  --surface: #ffffff;
+  --txt: #2B2B2B;
+  --navy: #1F3A5F;
+  --line: rgba(31,58,95,.14);
+  --line-soft: rgba(31,58,95,.08);
+  --field-line: rgba(31,58,95,.25);
+  --stripe: rgba(31,58,95,.05);
+  --ph-txt: rgba(31,58,95,.55);
+  --ph-fill: #f0efec;
+  --deep: #1F3A5F;
+  --deep-card: #1a3252;
+  --gold: #8A6A1E;
+  --gold-hover: #6f5516;
+  --gold-on-deep: #C89B3C;
+  --gold-txt: #ffffff;
+  --shadow: rgba(31,58,95,.1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Ink & Ochre (dark) */
+:root[data-palette="ink"] {
+  --bg: #121212; --bg-blur: rgba(18,18,18,.94); --surface: #1B1B1A; --txt: #DAD6CD;
+  --navy: #F2EFE7; --line: rgba(242,239,231,.16); --line-soft: rgba(242,239,231,.09);
+  --field-line: rgba(242,239,231,.28); --stripe: rgba(242,239,231,.07);
+  --ph-txt: rgba(242,239,231,.5); --ph-fill: #1C1C1B;
+  --deep: #0C0C0C; --deep-card: #171716;
+  --gold: #C88A3F; --gold-hover: #d99a4d; --gold-txt: #121212; --gold-on-deep: #C88A3F; --shadow: rgba(0,0,0,.45);
+}
+:root[data-palette="ink"][data-theme="light"] {
+  --bg: #F6F3EC; --bg-blur: rgba(246,243,236,.94); --surface: #FFFFFF; --txt: #2A2723;
+  --navy: #1A1917; --line: rgba(26,25,23,.14); --line-soft: rgba(26,25,23,.08);
+  --field-line: rgba(26,25,23,.25); --stripe: rgba(26,25,23,.05);
+  --ph-txt: rgba(26,25,23,.5); --ph-fill: #EFEBE2;
+  --deep: #1A1917; --deep-card: #242220;
+  --gold: #8F5817; --gold-hover: #764812; --gold-on-deep: #C88A3F; --gold-txt: #FFFFFF; --shadow: rgba(26,25,23,.12);
+}
+
+/* Forest & Brass (dark) */
+:root[data-palette="forest"] {
+  --bg: #0E1A16; --bg-blur: rgba(14,26,22,.94); --surface: #152420; --txt: #D2D6CF;
+  --navy: #EDF1E9; --line: rgba(237,241,233,.16); --line-soft: rgba(237,241,233,.09);
+  --field-line: rgba(237,241,233,.28); --stripe: rgba(237,241,233,.07);
+  --ph-txt: rgba(237,241,233,.5); --ph-fill: #16251F;
+  --deep: #08120F; --deep-card: #122019;
+  --gold: #C9A961; --gold-hover: #d8ba75; --gold-txt: #0E1A16; --gold-on-deep: #C9A961; --shadow: rgba(0,0,0,.45);
+}
+:root[data-palette="forest"][data-theme="light"] {
+  --bg: #F5F4EE; --bg-blur: rgba(245,244,238,.94); --surface: #FFFFFF; --txt: #2A2F2A;
+  --navy: #1E3A2F; --line: rgba(30,58,47,.14); --line-soft: rgba(30,58,47,.08);
+  --field-line: rgba(30,58,47,.25); --stripe: rgba(30,58,47,.05);
+  --ph-txt: rgba(30,58,47,.5); --ph-fill: #EDEDE4;
+  --deep: #1E3A2F; --deep-card: #1a3228;
+  --gold: #7C6224; --gold-hover: #66501C; --gold-on-deep: #C9A961; --gold-txt: #FFFFFF; --shadow: rgba(30,58,47,.12);
+}
+
+/* Slate & Terracotta (dark) */
+:root[data-palette="slate"] {
+  --bg: #151719; --bg-blur: rgba(21,23,25,.94); --surface: #1E2124; --txt: #D6D4D1;
+  --navy: #F0EFED; --line: rgba(240,239,237,.16); --line-soft: rgba(240,239,237,.09);
+  --field-line: rgba(240,239,237,.28); --stripe: rgba(240,239,237,.07);
+  --ph-txt: rgba(240,239,237,.5); --ph-fill: #1F2225;
+  --deep: #0F1113; --deep-card: #1A1D20;
+  --gold: #C4703F; --gold-hover: #d4804e; --gold-txt: #151719; --gold-on-deep: #C4703F; --shadow: rgba(0,0,0,.45);
+}
+:root[data-palette="slate"][data-theme="light"] {
+  --bg: #F7F5F2; --bg-blur: rgba(247,245,242,.94); --surface: #FFFFFF; --txt: #2C2E30;
+  --navy: #31383D; --line: rgba(49,56,61,.14); --line-soft: rgba(49,56,61,.08);
+  --field-line: rgba(49,56,61,.25); --stripe: rgba(49,56,61,.05);
+  --ph-txt: rgba(49,56,61,.5); --ph-fill: #EEEBE6;
+  --deep: #31383D; --deep-card: #2b3135;
+  --gold: #B0552A; --gold-hover: #954621; --gold-on-deep: #E09A70; --gold-txt: #FFFFFF; --shadow: rgba(49,56,61,.12);
+}
+
+/* Plum & Clay (dark) */
+:root[data-palette="plum"] {
+  --bg: #171320; --bg-blur: rgba(23,19,32,.94); --surface: #211B2C; --txt: #D8D2DA;
+  --navy: #F1ECF3; --line: rgba(241,236,243,.16); --line-soft: rgba(241,236,243,.09);
+  --field-line: rgba(241,236,243,.28); --stripe: rgba(241,236,243,.07);
+  --ph-txt: rgba(241,236,243,.5); --ph-fill: #221C2D;
+  --deep: #100D17; --deep-card: #1C1726;
+  --gold: #C08A6E; --gold-hover: #d09b80; --gold-txt: #171320; --gold-on-deep: #C08A6E; --shadow: rgba(0,0,0,.45);
+}
+:root[data-palette="plum"][data-theme="light"] {
+  --bg: #F8F5F4; --bg-blur: rgba(248,245,244,.94); --surface: #FFFFFF; --txt: #2E2A31;
+  --navy: #3B2B45; --line: rgba(59,43,69,.14); --line-soft: rgba(59,43,69,.08);
+  --field-line: rgba(59,43,69,.25); --stripe: rgba(59,43,69,.05);
+  --ph-txt: rgba(59,43,69,.5); --ph-fill: #EFEAEA;
+  --deep: #3B2B45; --deep-card: #33253c;
+  --gold: #9A5E42; --gold-hover: #824e36; --gold-on-deep: #C9977C; --gold-txt: #FFFFFF; --shadow: rgba(59,43,69,.12);
+}
+
+/* ── Base styles ── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background: var(--bg);
+    color: var(--txt);
+    font-family: var(--font-poppins, Poppins, system-ui, sans-serif);
+    -webkit-font-smoothing: antialiased;
+  }
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  a {
+    color: var(--navy);
+    text-decoration: none;
+  }
+  a:hover {
+    color: var(--gold);
+  }
+  section[id] {
+    scroll-margin-top: calc(var(--hdr-h, 92px) + 24px);
+  }
+  input, select, textarea, button {
+    font-family: inherit;
+  }
+  ::selection {
+    background: var(--gold);
+    color: var(--gold-txt);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ── Custom component classes ── */
+@layer components {
+  /* Timeline: first PM role entry */
+  .timeline-first {
+    position: relative;
+    padding-left: 34px;
+    padding-bottom: 14px;
+  }
+  .timeline-first::before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 34px;
+    bottom: 0;
+    width: 1px;
+    background: var(--line);
+  }
+  .timeline-first::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 0 4px var(--bg);
+  }
+
+  /* Timeline: subsequent roles at Contentstack */
+  .timeline-role {
+    position: relative;
+    padding: 30px 0 6px 34px;
+  }
+  .timeline-role::before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 34px;
+    bottom: 0;
+    width: 1px;
+    background: var(--line);
+  }
+  .timeline-role::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 34px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 0 4px var(--bg);
+  }
+
+  /* Timeline: history entries */
+  .timeline-hist {
+    position: relative;
+  }
+  .timeline-hist::before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 32px;
+    bottom: 0;
+    width: 1px;
+    background: var(--line);
+  }
+  .timeline-hist::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 32px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 0 4px var(--bg);
+  }
+
+  /* ── Button variants ── */
+  /* Gold fill */
+  .btn-gold {
+    background: var(--gold);
+    color: var(--gold-txt);
+    border: none;
+    transition: background 200ms, color 200ms;
+  }
+  .btn-gold:hover { background: var(--gold-hover); }
+
+  /* Navy outline → navy fill on hover */
+  .btn-navy-outline {
+    border: 1.5px solid var(--navy);
+    color: var(--navy);
+    background: transparent;
+    transition: background 200ms, color 200ms, border-color 200ms;
+  }
+  .btn-navy-outline:hover { background: var(--navy); color: var(--bg); }
+
+  /* Subtle outline → gold border + gold text on hover */
+  .btn-subtle-outline {
+    border: 1.5px solid var(--line);
+    color: var(--txt);
+    background: transparent;
+    transition: border-color 200ms, color 200ms;
+  }
+  .btn-subtle-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* Round icon toggle (theme switcher) */
+  .btn-toggle {
+    color: var(--navy);
+    border: 1px solid var(--line);
+    background: transparent;
+    transition: border-color 200ms, color 200ms;
+  }
+  .btn-toggle:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* Form field focus styles */
+  .field-underline:focus {
+    border-bottom-color: var(--gold);
+    outline: none;
+  }
+  .field-border:focus {
+    border-color: var(--gold);
+    outline: none;
+  }
+}
+
+/* ── Responsive breakpoints ── */
+@media (max-width: 1080px) {
+  .nav-inner {
+    flex-wrap: wrap !important;
+    height: auto !important;
+    padding: 14px 24px !important;
+    row-gap: 12px;
+  }
+  .nav-group {
+    flex-wrap: wrap !important;
+    gap: 14px 22px !important;
+    width: 100%;
+  }
+  .nav-links {
+    flex-wrap: wrap !important;
+    gap: 10px 20px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .stack-grid {
+    grid-template-columns: 1fr !important;
+    gap: 44px !important;
+  }
+  .stats-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 14px !important;
+  }
+  .unstick {
+    position: static !important;
+    top: auto !important;
+  }
+  .contact-side {
+    border-left: 0 !important;
+    border-top: 1px solid var(--line) !important;
+    padding-left: 0 !important;
+    padding-top: 34px !important;
+  }
+  section {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+  footer {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .stats-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .fields-grid {
+    gap: 26px !important;
+  }
+  section {
+    padding-top: 64px !important;
+    padding-bottom: 64px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
 }
