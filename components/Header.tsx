@@ -90,7 +90,7 @@ export default function Header() {
     <header
       ref={headerRef}
       style={{ background: 'var(--bg-blur)', borderBottom: '1px solid var(--line)' }}
-      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-[8px] px-8"
+      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-[8px] px-4 md:px-8"
     >
       <nav className="nav-inner max-w-[1180px] mx-auto w-full h-[76px] flex items-center justify-between gap-6">
         {/* Wordmark */}
