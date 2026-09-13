@@ -302,7 +302,7 @@
   .nav-inner {
     height: 60px !important;
     flex-wrap: nowrap !important;
-    padding: 0 20px !important;
+    padding: 0 !important;
     row-gap: 0 !important;
   }
   .nav-group {

@@ -188,7 +188,7 @@ export default function Header() {
               <a
                 key={id}
                 href={href}
-                onClick={(e) => { e.preventDefault(); setMenuOpen(false); scrollToSection(id); }}
+                onClick={(e) => { e.preventDefault(); setMenuOpen(false); setTimeout(() => scrollToSection(id), 50); }}
                 style={{
                   borderBottom: '1px solid var(--line)',
                   color: isActive(id) ? 'var(--gold)' : 'var(--txt)',
@@ -201,7 +201,7 @@ export default function Header() {
             <div className="py-5">
               <a
                 href="#resume"
-                onClick={(e) => { e.preventDefault(); setMenuOpen(false); scrollToSection('resume'); }}
+                onClick={(e) => { e.preventDefault(); setMenuOpen(false); setTimeout(() => scrollToSection('resume'), 50); }}
                 className="btn-gold rounded-[6px] text-[13px] font-medium tracking-[.06em] uppercase px-[22px] py-[13px] inline-block"
               >
                 Download Resume
