@@ -175,15 +175,17 @@ export default function Contact() {
             <div>
               <p
                 style={{ color: 'var(--gold)', margin: '0 0 10px' }}
-                className="text-[10.5px] font-medium tracking-[.14em] uppercase"
+                className="text-[11.5px] font-medium tracking-[.14em] uppercase"
               >
                 Email
               </p>
               <a
                 href="mailto:siddheshsawant5789@gmail.com"
-                style={{ fontFamily: 'var(--font-lora, Lora, Georgia, serif)', color: 'var(--navy)', fontSize: '20px' }}
+                style={{ color: 'var(--navy)', fontFamily: 'ui-monospace, Menlo, monospace', wordBreak: 'break-all', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+                className="text-[13px] leading-[1.7] hover:text-[var(--gold)] transition-colors duration-200"
               >
                 siddheshsawant5789@gmail.com
+                <span style={{ fontSize: '15px', lineHeight: 1 }}>↗</span>
               </a>
             </div>
 
@@ -198,10 +200,11 @@ export default function Contact() {
                 href="https://linkedin.com/in/siddhesh-sawant-0283349"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ color: 'var(--navy)', fontFamily: 'ui-monospace, Menlo, monospace', wordBreak: 'break-all' }}
-                className="text-[13px] leading-[1.7]"
+                style={{ color: 'var(--navy)', fontFamily: 'ui-monospace, Menlo, monospace', wordBreak: 'break-all', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+                className="text-[13px] leading-[1.7] hover:text-[var(--gold)] transition-colors duration-200"
               >
                 linkedin.com/in/siddhesh-sawant-0283349
+                <span style={{ fontSize: '15px', lineHeight: 1, flexShrink: 0 }}>↗</span>
               </a>
             </div>
 
