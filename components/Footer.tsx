@@ -13,7 +13,7 @@ export default function Footer() {
         </span>
         <div className="flex gap-[26px]">
           <a
-            href="https://linkedin.com/in/siddhesh-sawant-0283349"
+            href="https://www.linkedin.com/in/siddhesh-sawant-0283349"
             style={{ color: 'var(--gold-on-deep)' }}
             className="text-[12.5px] tracking-[.1em] uppercase hover:text-white transition-colors duration-200"
           >
