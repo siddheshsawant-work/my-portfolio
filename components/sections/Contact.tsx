@@ -67,7 +67,7 @@ export default function Contact() {
           style={{ color: 'var(--txt)', opacity: 0.85, maxWidth: '64ch', margin: '0 0 56px' }}
           className="text-[15.5px] leading-[1.85] font-light"
         >
-          I&apos;m open to new opportunities and happy to connect — whether you have a role to
+          I&apos;m open to new opportunities and happy to connect, whether you have a role to
           discuss, a project in mind, or just want to say hello.
         </p>
 
@@ -184,12 +184,12 @@ export default function Contact() {
               </button>
               {status === 'sent' && (
                 <span style={{ color: 'var(--navy)' }} className="text-[13.5px] font-normal">
-                  Thanks — I&apos;ll be in touch shortly.
+                  Thanks, I&apos;ll be in touch shortly.
                 </span>
               )}
               {status === 'error' && (
                 <span style={{ color: '#c0392b' }} className="text-[13.5px] font-normal">
-                  Something went wrong — please email me directly.
+                  Something went wrong. Please email me directly.
                 </span>
               )}
             </div>

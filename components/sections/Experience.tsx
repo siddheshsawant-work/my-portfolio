@@ -88,7 +88,7 @@ export default function Experience() {
 
           {/* Right: timeline entries */}
           <div>
-            {/* PM role — first entry */}
+            {/* PM role - first entry */}
             <div className="timeline-first">
               <div className="flex flex-wrap items-baseline justify-between gap-3">
                 <h4
@@ -115,7 +115,7 @@ export default function Experience() {
                 className="text-[15px] leading-[1.85] font-light"
               >
                 After leading QA at Contentstack for nearly four years I moved into a newly created
-                technical program management role inside TSO Operations — owning and running eight
+                technical program management role inside TSO Operations, owning and running eight
                 distinct programs simultaneously, a mix of hands-on building and structured program
                 delivery.
               </p>

@@ -34,15 +34,15 @@ export default function About() {
               } as React.CSSProperties}
               className="m-0 mb-[30px] leading-[1.25] font-semibold"
             >
-              I run the room — and build what the room needs.
+              I run the room and build what the room needs.
             </h2>
 
             {[
               "I'm a Technical Program Manager based in Mumbai with over 13 years of experience that spans quality engineering, team leadership, and end-to-end technical program delivery.",
-              'My career started in software testing — building test strategies, leading automation efforts, and eventually managing QA teams across some of the most demanding product environments in SaaS. Over time I grew into owning programs, managing customer relationships, and driving cross-functional initiatives that touched product, engineering, sales and field teams simultaneously.',
-              'What makes me a little different is that I don\'t just manage programs — I build things. Using a vibe coding workflow with Claude and MCP, I\'ve designed, built and shipped production-grade internal applications from scratch: full-stack platforms with React, Next.js and PostgreSQL, deployed on GCP, integrated with Salesforce and Snowflake APIs, and used daily by hundreds of people.',
+              'My career started in software testing, building test strategies, leading automation efforts, and eventually managing QA teams across some of the most demanding product environments in SaaS. Over time I grew into owning programs, managing customer relationships, and driving cross-functional initiatives that touched product, engineering, sales and field teams simultaneously.',
+              'What makes me a little different is that I don\'t just manage programs. I build things. Using a vibe coding workflow with Claude and MCP, I\'ve designed, built and shipped production-grade internal applications from scratch: full-stack platforms with React, Next.js and PostgreSQL, deployed on GCP, integrated with Salesforce and Snowflake APIs, and used daily by hundreds of people.',
               'I hold an MBA in Information Technology and Systems Management from NMIMS alongside my engineering degree, and I\'ve kept building on that foundation with certifications in Generative AI, ISTQB AI Testing, Salesforce and program management.',
-              "I'm open to Technical Program Manager, Program Manager and Product/Technical Leadership roles at product-driven companies — especially in SaaS, where I feel most at home.",
+              "I'm open to Technical Program Manager, Program Manager and Product/Technical Leadership roles at product-driven companies, especially in SaaS, where I feel most at home.",
             ].map((para, i) => (
               <p
                 key={i}

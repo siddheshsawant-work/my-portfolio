@@ -14,19 +14,19 @@ export type Certification = {
 export const education: Education[] = [
   {
     period: 'Jan 2022 – Jan 2024',
-    degree: 'MBA — Information Technology & Systems Management',
+    degree: 'MBA in Information Technology & Systems Management',
     institution: 'NMIMS CDOE',
     description:
       'Completed while working full-time as Team Lead and then Associate QA Manager at Contentstack. Focus on IT strategy, systems management and business administration.',
   },
   {
     period: 'Aug 2008 – Jun 2012',
-    degree: 'Bachelor of Engineering — Information Technology',
+    degree: 'Bachelor of Engineering in Information Technology',
     institution: "G.H. Raisoni Society's College of Engineering and Management, Pune",
   },
   {
     period: 'Aug 2005 – Jun 2008',
-    degree: 'Diploma — Information Technology',
+    degree: 'Diploma in Information Technology',
     institution: 'Shri Bhagubhai Mafatlal Polytechnic, Mumbai',
   },
 ];

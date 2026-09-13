@@ -19,7 +19,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: 'Siddhesh Sawant — Technical Program Manager',
+  title: 'Siddhesh Sawant | Technical Program Manager',
   description:
     '13+ years across SaaS, QA leadership, and technical program delivery. Technical Program Manager based in Mumbai, India. Open to new opportunities.',
   keywords: [

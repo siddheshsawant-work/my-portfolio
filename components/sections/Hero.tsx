@@ -65,7 +65,7 @@ export default function Hero() {
               } as React.CSSProperties}
               className="m-0 mb-10 leading-[1.5] font-normal"
             >
-              I manage the programs — and build the tools that make my team faster at running them.
+              I manage the programs and build the tools that make my team faster at running them.
             </p>
 
             {/* CTAs */}

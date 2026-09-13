@@ -23,7 +23,7 @@ const placeholder = (tag: string): CodeItem => ({
 export const codeGroups: CodeGroup[] = [
   {
     label: 'Repositories',
-    blurb: 'Production and side projects — full-stack apps, dashboards and internal tooling.',
+    blurb: 'Production and side projects: full-stack apps, dashboards and internal tooling.',
     items: [placeholder('Next.js'), placeholder('React'), placeholder('Node.js')],
   },
   {
