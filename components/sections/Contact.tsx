@@ -27,8 +27,8 @@ export default function Contact() {
     if (!fields.name || !fields.email || !fields.message) return;
     setStatus('sending');
     try {
-      const body = new URLSearchParams(fields as Record<string, string>);
-      await fetch(WEBHOOK_URL, { method: 'POST', body, mode: 'no-cors' });
+      const params = new URLSearchParams(fields as Record<string, string>);
+      await fetch(`${WEBHOOK_URL}?${params.toString()}`, { mode: 'no-cors' });
       setStatus('sent');
     } catch {
       setStatus('error');
