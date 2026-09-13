@@ -80,7 +80,7 @@ export default function Header() {
       style={{ background: 'var(--bg-blur)', borderBottom: '1px solid var(--line)' }}
       className="fixed top-0 left-0 right-0 z-50 backdrop-blur-[8px]"
     >
-      <nav className="nav-inner max-w-[1180px] mx-auto px-8 h-[76px] flex items-center justify-between gap-6">
+      <nav className="nav-inner w-full px-8 h-[76px] flex items-center justify-between gap-6">
         {/* Wordmark */}
         <a
           href="#top"
