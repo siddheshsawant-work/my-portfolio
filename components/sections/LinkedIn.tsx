@@ -62,7 +62,7 @@ export default function LinkedIn() {
           </p>
           <div>
             <a
-              href="https://www.linkedin.com/in/siddhesh-sawant-0283349"
+              href="https://linkedin.com/in/siddhesh-sawant-0283349"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-gold inline-block rounded-[6px] text-[13.5px] font-medium tracking-[.08em] uppercase px-[30px] py-4"
