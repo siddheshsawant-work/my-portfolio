@@ -74,6 +74,18 @@ export default function Header() {
     return active === id;
   };
 
+  // Scroll so the section's first <p> (the "01 / About" label) sits 10px below the header
+  const scrollToSection = (id: string) => {
+    if (id === 'top') { window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
+    const section = document.getElementById(id);
+    if (!section) return;
+    const hdrH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--hdr-h')) || 76;
+    const first = section.querySelector('p') as HTMLElement | null;
+    const anchor = first ?? section;
+    const top = window.scrollY + anchor.getBoundingClientRect().top - hdrH - 10;
+    window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+  };
+
   return (
     <header
       ref={headerRef}
@@ -84,6 +96,7 @@ export default function Header() {
         {/* Wordmark */}
         <a
           href="#top"
+          onClick={(e) => { e.preventDefault(); scrollToSection('top'); }}
           style={{ color: 'var(--navy)', fontFamily: 'var(--font-lora, Lora, Georgia, serif)' }}
           className="text-[21px] font-semibold tracking-[.01em] whitespace-nowrap"
         >
@@ -97,6 +110,7 @@ export default function Header() {
               <a
                 key={id}
                 href={href}
+                onClick={(e) => { e.preventDefault(); scrollToSection(id); }}
                 className="relative text-[12.5px] font-normal tracking-[.07em] uppercase py-[6px] block text-[var(--txt)] hover:text-[var(--navy)] transition-colors duration-200"
               >
                 {label}
@@ -125,6 +139,7 @@ export default function Header() {
 
           <a
             href="#resume"
+            onClick={(e) => { e.preventDefault(); scrollToSection('resume'); }}
             className="btn-gold rounded-[6px] text-[13px] font-medium tracking-[.06em] uppercase px-[22px] py-[13px] whitespace-nowrap"
           >
             Download Resume
@@ -173,7 +188,7 @@ export default function Header() {
               <a
                 key={id}
                 href={href}
-                onClick={() => setMenuOpen(false)}
+                onClick={(e) => { e.preventDefault(); setMenuOpen(false); scrollToSection(id); }}
                 style={{
                   borderBottom: '1px solid var(--line)',
                   color: isActive(id) ? 'var(--gold)' : 'var(--txt)',
@@ -186,7 +201,7 @@ export default function Header() {
             <div className="py-5">
               <a
                 href="#resume"
-                onClick={() => setMenuOpen(false)}
+                onClick={(e) => { e.preventDefault(); setMenuOpen(false); scrollToSection('resume'); }}
                 className="btn-gold rounded-[6px] text-[13px] font-medium tracking-[.06em] uppercase px-[22px] py-[13px] inline-block"
               >
                 Download Resume
