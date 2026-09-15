@@ -7,13 +7,12 @@ const NAV_LINKS = [
   { href: '#skills', label: 'Skills', id: 'skills' },
   { href: '#experience', label: 'Experience', id: 'experience' },
   { href: '#projects', label: 'Projects', id: 'projects' },
-  { href: '#code', label: 'Code', id: 'code' },
   { href: '#credentials', label: 'Credentials', id: 'credentials' },
   { href: '#resume', label: 'Resume', id: 'resume' },
   { href: '#contact', label: 'Contact', id: 'contact' },
 ];
 
-const SECTION_IDS = ['top', 'about', 'skills', 'experience', 'projects', 'code', 'credentials', 'resume', 'linkedin', 'contact'];
+const SECTION_IDS = ['top', 'about', 'skills', 'experience', 'projects', 'credentials', 'resume', 'linkedin', 'contact'];
 
 export default function Header() {
   const [active, setActive] = useState('top');

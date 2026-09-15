@@ -5,7 +5,6 @@ import About from '@/components/sections/About';
 import Skills from '@/components/sections/Skills';
 import Experience from '@/components/sections/Experience';
 import Projects from '@/components/sections/Projects';
-import Code from '@/components/sections/Code';
 import Credentials from '@/components/sections/Credentials';
 import Resume from '@/components/sections/Resume';
 import LinkedIn from '@/components/sections/LinkedIn';
@@ -21,7 +20,6 @@ export default function Home() {
         <Skills />
         <Experience />
         <Projects />
-        <Code />
         <Credentials />
         <Resume />
         <LinkedIn />
