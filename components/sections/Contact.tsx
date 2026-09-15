@@ -49,7 +49,7 @@ export default function Contact() {
           style={{ color: 'var(--gold)' }}
           className="m-0 mb-[14px] text-[12px] font-medium tracking-[.22em] uppercase"
         >
-          09 / Contact
+          08 / Contact
         </p>
         <h2
           style={{

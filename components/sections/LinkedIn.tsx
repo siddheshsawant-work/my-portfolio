@@ -20,7 +20,7 @@ export default function LinkedIn() {
             style={{ color: 'var(--gold)' }}
             className="m-0 mb-[14px] text-[12px] font-medium tracking-[.22em] uppercase"
           >
-            08 / LinkedIn
+            07 / LinkedIn
           </p>
           <h2
             style={{

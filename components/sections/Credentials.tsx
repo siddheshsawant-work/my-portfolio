@@ -12,7 +12,7 @@ export default function Credentials() {
           style={{ color: 'var(--gold)' }}
           className="m-0 mb-[14px] text-[12px] font-medium tracking-[.22em] uppercase"
         >
-          06 / Credentials
+          05 / Credentials
         </p>
         <h2
           style={{

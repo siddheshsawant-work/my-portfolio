@@ -17,7 +17,7 @@ export default function Resume() {
           style={{ color: 'var(--gold)' }}
           className="m-0 mb-[14px] text-[12px] font-medium tracking-[.22em] uppercase"
         >
-          07 / Resume &amp; Profiles
+          06 / Resume &amp; Profiles
         </p>
 
         {/* Header row */}
