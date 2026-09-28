@@ -162,11 +162,11 @@ export default function Experience() {
                 borderTop: '2px solid var(--gold)',
               }}
             >
-              {/* Vertical center spine */}
+              {/* Vertical center spine — position matches 0.44fr / 0.56fr split */}
               <div
                 style={{
                   position: 'absolute',
-                  left: '50%',
+                  left: '44%',
                   top: 0,
                   bottom: 0,
                   width: '1px',
