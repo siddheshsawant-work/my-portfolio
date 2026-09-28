@@ -250,7 +250,7 @@ export default function Contact() {
                 Open to
               </p>
               <p style={{ color: 'var(--txt)', margin: 0 }} className="text-[15px] leading-[1.8] font-light">
-                Technical Program Manager · Program Manager · Product / Technical Leadership
+                QA Lead/Manager, Program/Product Manager
               </p>
             </div>
 
