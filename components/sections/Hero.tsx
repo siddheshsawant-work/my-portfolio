@@ -22,7 +22,7 @@ export default function Hero() {
               style={{ color: 'var(--gold)' }}
               className="m-0 mb-[22px] text-[12px] font-medium tracking-[.22em] uppercase"
             >
-              Technical Program Management
+              QA Leadership + Program Management
             </p>
 
             <h1
@@ -50,9 +50,9 @@ export default function Hero() {
               style={{ color: 'var(--txt)', opacity: 0.7 }}
               className="m-0 mb-[18px] text-[15px] leading-[1.7] font-normal tracking-[.02em]"
             >
-              Program Manager (Technical) &nbsp;·&nbsp; SaaS &amp; Platform Delivery &nbsp;·&nbsp; Salesforce Programs
+              QA Manager &nbsp;|&nbsp; Technical Program Manager &nbsp;|&nbsp; SaaS &amp; E-Commerce Platform Delivery
               <br />
-              AI-Augmented Development &nbsp;·&nbsp; QA Leadership
+              AI-Augmented Dev &amp; QA &nbsp;|&nbsp; ISTQB Certified ×2
             </p>
 
             <p
@@ -65,7 +65,7 @@ export default function Hero() {
               } as React.CSSProperties}
               className="m-0 mb-10 leading-[1.5] font-normal"
             >
-              I manage the programs and build the tools that make my team faster at running them.
+              I lead QA teams, run programs and build the tools that make both better.
             </p>
 
             {/* CTAs */}
@@ -94,8 +94,8 @@ export default function Hero() {
               } as React.CSSProperties}
               className="m-0 mt-[34px] pt-[26px] text-[14px] leading-[1.8] font-light"
             >
-              Based in Mumbai, India. 13+ years across SaaS, QA leadership, and technical program
-              delivery. Open to new opportunities.
+              Based in Mumbai, India. 13+ years across QA leadership, technical program delivery in SaaS
+              and E-Commerce Platforms. Open to new opportunities.
             </p>
           </div>
 
