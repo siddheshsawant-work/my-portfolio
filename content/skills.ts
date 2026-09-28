@@ -10,7 +10,7 @@ export const skills: Skill[] = [
     num: '01',
     name: 'QA & Test Leadership',
     detail:
-      '13+ years in quality engineering and QA leadership, including leading a team of 11 engineers across 50+ customer-facing releases. Program management has run in parallel for the last 3 years, not after — the quality rigour goes into everything I deliver.',
+      '13+ years in quality engineering and QA leadership, including leading a team of 11 engineers across 50+ customer-facing releases and mentoring junior engineers on testing best practices, documentation and automation standards.',
     bullets: [
       'Team leadership and performance management',
       'Test strategy and planning',
@@ -25,7 +25,7 @@ export const skills: Skill[] = [
   },
   {
     num: '02',
-    name: 'Program Management',
+    name: 'Program & Project Management',
     detail:
       'Managing multiple concurrent programs from kickoff through delivery: product, engineering, sales, solutions architects and customers, all at the same time. Structured but pragmatic: clear owners, visible status, fast decisions.',
     bullets: [
