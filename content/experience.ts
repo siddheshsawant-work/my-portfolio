@@ -9,6 +9,7 @@ export type Role = {
   period: string;
   body: string;
   bullets: string[];
+  parallelNote?: string;
 };
 
 export type HistoryEntry = {
@@ -71,9 +72,10 @@ export const programs: Program[] = [
 
 export const roles: Role[] = [
   {
-    title: 'Associate QA Manager',
-    period: 'Mar 2024 – Jul 2025',
-    body: 'Continued managing the QA team while progressively taking on more: project manager for select customer accounts from early 2024, program manager for internal initiatives from Feb 2025.',
+    title: 'Associate Manager, QA',
+    period: 'Feb 2024 – Aug 2026',
+    body: 'Promoted from Team Lead to Associate Manager in February 2024, continuing to lead the QA team while running the full PM portfolio in parallel. Owned hiring, performance reviews and team strategy alongside day-to-day QA execution across 50+ customer-facing releases.',
+    parallelNote: 'Ran in parallel with Program Manager (Technical)',
     bullets: [
       'Introduced a dedicated QA freeze: after code freeze the team shifted entirely to building and hardening automation ahead of release',
       'Drove AI tooling adoption in QA: expanded Playwright coverage, brought in GitHub Copilot, formalised AI testing practice via ISTQB AI Testing',

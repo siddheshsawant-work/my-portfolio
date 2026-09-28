@@ -91,22 +91,39 @@ export default function Experience() {
             {/* PM role - first entry */}
             <div className="timeline-first">
               <div className="flex flex-wrap items-baseline justify-between gap-3">
-                <h4
-                  style={{
-                    fontFamily: 'var(--font-lora, Lora, Georgia, serif)',
-                    color: 'var(--navy)',
-                    fontSize: '23px',
-                    fontWeight: 600,
-                    margin: 0,
-                  }}
-                >
-                  Program Manager, TSO Technical Operations
-                </h4>
+                <div className="flex flex-wrap items-baseline gap-3">
+                  <h4
+                    style={{
+                      fontFamily: 'var(--font-lora, Lora, Georgia, serif)',
+                      color: 'var(--navy)',
+                      fontSize: '23px',
+                      fontWeight: 600,
+                      margin: 0,
+                    }}
+                  >
+                    Program Manager (Technical)
+                  </h4>
+                  <span
+                    style={{
+                      background: 'var(--gold)',
+                      color: '#fff',
+                      fontSize: '10px',
+                      fontWeight: 600,
+                      letterSpacing: '.1em',
+                      padding: '3px 9px',
+                      borderRadius: '3px',
+                      textTransform: 'uppercase',
+                      whiteSpace: 'nowrap',
+                    }}
+                  >
+                    Parallel role
+                  </span>
+                </div>
                 <span
                   style={{ color: 'var(--gold)', fontFamily: 'ui-monospace, Menlo, monospace' }}
                   className="text-[12px]"
                 >
-                  Aug 2025 – Aug 2026
+                  Jul 2023 – Aug 2026
                 </span>
               </div>
 
@@ -114,10 +131,10 @@ export default function Experience() {
                 style={{ color: 'var(--txt)', maxWidth: '66ch', margin: '16px 0 0' }}
                 className="text-[15px] leading-[1.85] font-light"
               >
-                After leading QA at Contentstack for nearly four years I moved into a newly created
-                technical program management role inside TSO Operations, owning and running eight
-                distinct programs simultaneously, a mix of hands-on building and structured program
-                delivery.
+                From July 2023, running as Program Manager (Technical) in parallel with QA
+                leadership. Owned and ran eight distinct programs simultaneously inside TSO
+                Operations: a mix of hands-on building and structured program delivery across
+                product, engineering, sales and customer teams.
               </p>
 
               {/* Programs sub-section */}
@@ -167,17 +184,36 @@ export default function Experience() {
                 style={{ borderTop: '1px solid var(--line)' }}
               >
                 <div className="flex flex-wrap items-baseline justify-between gap-3">
-                  <h4
-                    style={{
-                      fontFamily: 'var(--font-lora, Lora, Georgia, serif)',
-                      color: 'var(--navy)',
-                      fontSize: '23px',
-                      fontWeight: 600,
-                      margin: 0,
-                    }}
-                  >
-                    {role.title}
-                  </h4>
+                  <div className="flex flex-wrap items-baseline gap-3">
+                    <h4
+                      style={{
+                        fontFamily: 'var(--font-lora, Lora, Georgia, serif)',
+                        color: 'var(--navy)',
+                        fontSize: '23px',
+                        fontWeight: 600,
+                        margin: 0,
+                      }}
+                    >
+                      {role.title}
+                    </h4>
+                    {role.parallelNote && (
+                      <span
+                        style={{
+                          background: 'var(--gold)',
+                          color: '#fff',
+                          fontSize: '10px',
+                          fontWeight: 600,
+                          letterSpacing: '.1em',
+                          padding: '3px 9px',
+                          borderRadius: '3px',
+                          textTransform: 'uppercase',
+                          whiteSpace: 'nowrap',
+                        }}
+                      >
+                        Parallel role
+                      </span>
+                    )}
+                  </div>
                   <span
                     style={{ color: 'var(--gold)', fontFamily: 'ui-monospace, Menlo, monospace' }}
                     className="text-[12px]"
@@ -185,6 +221,14 @@ export default function Experience() {
                     {role.period}
                   </span>
                 </div>
+                {role.parallelNote && (
+                  <p
+                    style={{ color: 'var(--txt)', opacity: 0.6, margin: '10px 0 0' }}
+                    className="text-[12.5px] font-light tracking-[.01em]"
+                  >
+                    ↔ {role.parallelNote}
+                  </p>
+                )}
                 <p
                   style={{ color: 'var(--txt)', maxWidth: '66ch', margin: '16px 0 0' }}
                   className="text-[15px] leading-[1.85] font-light"
