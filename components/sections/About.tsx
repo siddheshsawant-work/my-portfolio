@@ -34,15 +34,15 @@ export default function About() {
               } as React.CSSProperties}
               className="m-0 mb-[30px] leading-[1.25] font-semibold"
             >
-              I run the room and build what the room needs.
+              I lead quality, run the programs and build what the team needs.
             </h2>
 
             {[
-              "I'm a Technical Program Manager based in Mumbai with over 13 years of experience that spans quality engineering, team leadership, and end-to-end technical program delivery.",
-              'My career started in software testing, building test strategies, leading automation efforts, and eventually managing QA teams across some of the most demanding product environments in SaaS. Over time I grew into owning programs, managing customer relationships, and driving cross-functional initiatives that touched product, engineering, sales and field teams simultaneously.',
-              'What makes me a little different is that I don\'t just manage programs. I build things. Using a vibe coding workflow with Claude and MCP, I\'ve designed, built and shipped production-grade internal applications from scratch: full-stack platforms with React, Next.js and PostgreSQL, deployed on GCP, integrated with Salesforce and Snowflake APIs, and used daily by hundreds of people.',
-              'I hold an MBA in Information Technology and Systems Management from NMIMS alongside my engineering degree, and I\'ve kept building on that foundation with certifications in Generative AI, ISTQB AI Testing, Salesforce and program management.',
-              "I'm open to Technical Program Manager, Program Manager and Product/Technical Leadership roles at product-driven companies, especially in SaaS, where I feel most at home.",
+              "I'm a QA Manager and Technical Program Manager based in Mumbai with 13+ years across SaaS and e-commerce platforms. I combine hands-on quality leadership with cross-functional program delivery, using AI tooling to give leadership real confidence in what ships.",
+              'I led a QA team of 11 engineers across 50+ customer-facing releases, owning test strategy, release gating and sign-off from planning through production. That spans manual best practices, SEO, load and performance testing, and automation frameworks including Playwright and Robot Framework.',
+              'In parallel, I owned internal technical programs, Salesforce reporting and dashboards, and structured stakeholder programs. I also managed external client accounts, coordinating across product and engineering teams to drive delivery from kickoff through go-live.',
+              'What makes me a little different is how I use AI. Using Claude and MCP, I unlock data workflows beyond what standard platforms allow and have shipped production-grade internal tools from scratch: full-stack platforms on React, Next.js and PostgreSQL, deployed on GCP. I also built a model-agnostic AI image-generation engine with a custom prompt framework and built-in IP-safety constraints.',
+              "I hold an MBA in Information Technology and Systems Management alongside my engineering degree, and I've kept building on that with certifications in Generative AI, ISTQB AI Testing and program management. I'm open to QA Leadership and Program Management roles at product-driven companies, especially in SaaS and e-commerce.",
             ].map((para, i) => (
               <p
                 key={i}
