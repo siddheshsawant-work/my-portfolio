@@ -14,6 +14,8 @@ export default function Footer() {
         <div className="flex gap-[26px]">
           <a
             href="https://in.linkedin.com/in/siddhesh-sawant-0283349"
+            target="_blank"
+            rel="noopener noreferrer"
             style={{ color: 'var(--gold-on-deep)' }}
             className="text-[12.5px] tracking-[.1em] uppercase hover:text-white transition-colors duration-200"
           >
