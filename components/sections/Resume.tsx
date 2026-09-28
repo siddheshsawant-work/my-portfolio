@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-const DOC_ID = '11M65mvsef81kSHxvrwvVWKxpvwpFwwQYNFxam05tB5w';
+const DOC_ID = '1lFYCXB-JZQagrjDSvF6-t5vnhYEA2z5BDhj6duGdP8g';
 const PDF_URL = `https://docs.google.com/document/d/${DOC_ID}/export?format=pdf`;
 const WORD_URL = `https://docs.google.com/document/d/${DOC_ID}/export?format=docx`;
 const PREVIEW_URL = `https://docs.google.com/document/d/${DOC_ID}/preview`;
