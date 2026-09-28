@@ -231,7 +231,7 @@ export default function Contact() {
                 LinkedIn
               </p>
               <a
-                href="https://linkedin.com/in/siddhesh-sawant-0283349"
+                href="https://in.linkedin.com/in/siddhesh-sawant-0283349"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ color: 'var(--navy)', fontFamily: 'ui-monospace, Menlo, monospace', wordBreak: 'break-all', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
