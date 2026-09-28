@@ -74,8 +74,8 @@ export default function Experience() {
           className="stack-grid"
           style={{
             display: 'grid',
-            gridTemplateColumns: '.28fr .72fr',
-            gap: '56px',
+            gridTemplateColumns: '.20fr .80fr',
+            gap: '48px',
             alignItems: 'start',
             paddingBottom: '20px',
             borderTop: '2px solid var(--gold)',
@@ -119,7 +119,7 @@ export default function Experience() {
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
+                gridTemplateColumns: '0.44fr 0.56fr',
                 marginBottom: '10px',
               }}
             >
@@ -157,7 +157,7 @@ export default function Experience() {
               style={{
                 position: 'relative',
                 display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
+                gridTemplateColumns: '0.44fr 0.56fr',
                 alignItems: 'start',
                 borderTop: '2px solid var(--gold)',
               }}
@@ -180,23 +180,16 @@ export default function Experience() {
               <div style={{ paddingRight: '28px', position: 'relative', zIndex: 1 }}>
 
                 {/* Associate Manager, QA */}
-                <div
-                  style={{ paddingTop: '30px', paddingBottom: '36px', position: 'relative' }}
-                >
-                  {/* Dot on spine */}
-                  <div
-                    style={{
-                      position: 'absolute',
-                      right: '-6px',
-                      top: '42px',
-                      width: '11px',
-                      height: '11px',
-                      borderRadius: '50%',
-                      background: 'var(--gold)',
-                      zIndex: 2,
-                    }}
-                  />
-                  <RoleTitle>{roles[0].title}</RoleTitle>
+                <div style={{ paddingTop: '30px', paddingBottom: '36px' }}>
+                  <div className="flex items-start gap-[10px]">
+                    <span
+                      style={{
+                        width: '10px', height: '10px', borderRadius: '50%',
+                        background: 'var(--gold)', flexShrink: 0, marginTop: '6px',
+                      }}
+                    />
+                    <RoleTitle>{roles[0].title}</RoleTitle>
+                  </div>
                   <RolePeriod>{roles[0].period}</RolePeriod>
                   <p
                     style={{ color: 'var(--txt)', margin: '0 0 16px' }}
@@ -212,22 +205,16 @@ export default function Experience() {
                 </div>
 
                 {/* Team Lead, QA */}
-                <div
-                  style={{ borderTop: '1px solid var(--line)', paddingTop: '30px', paddingBottom: '36px', position: 'relative' }}
-                >
-                  <div
-                    style={{
-                      position: 'absolute',
-                      right: '-6px',
-                      top: '42px',
-                      width: '11px',
-                      height: '11px',
-                      borderRadius: '50%',
-                      background: 'var(--gold)',
-                      zIndex: 2,
-                    }}
-                  />
-                  <RoleTitle>{roles[1].title}</RoleTitle>
+                <div style={{ borderTop: '1px solid var(--line)', paddingTop: '30px', paddingBottom: '36px' }}>
+                  <div className="flex items-start gap-[10px]">
+                    <span
+                      style={{
+                        width: '10px', height: '10px', borderRadius: '50%',
+                        background: 'var(--gold)', flexShrink: 0, marginTop: '6px',
+                      }}
+                    />
+                    <RoleTitle>{roles[1].title}</RoleTitle>
+                  </div>
                   <RolePeriod>{roles[1].period}</RolePeriod>
                   <p
                     style={{ color: 'var(--txt)', margin: '0 0 16px' }}
@@ -245,23 +232,16 @@ export default function Experience() {
                 </div>
 
                 {/* Senior Engineer II, QA */}
-                <div
-                  style={{ borderTop: '1px solid var(--line)', paddingTop: '30px', position: 'relative' }}
-                >
-                  <div
-                    style={{
-                      position: 'absolute',
-                      right: '-6px',
-                      top: '42px',
-                      width: '11px',
-                      height: '11px',
-                      borderRadius: '50%',
-                      background: 'var(--gold)',
-                      opacity: 0.5,
-                      zIndex: 2,
-                    }}
-                  />
-                  <RoleTitle>{roles[2].title}</RoleTitle>
+                <div style={{ borderTop: '1px solid var(--line)', paddingTop: '30px' }}>
+                  <div className="flex items-start gap-[10px]">
+                    <span
+                      style={{
+                        width: '10px', height: '10px', borderRadius: '50%',
+                        background: 'var(--gold)', flexShrink: 0, marginTop: '6px', opacity: 0.5,
+                      }}
+                    />
+                    <RoleTitle>{roles[2].title}</RoleTitle>
+                  </div>
                   <RolePeriod>{roles[2].period}</RolePeriod>
                   <p
                     style={{ color: 'var(--txt)', margin: 0 }}
@@ -274,21 +254,16 @@ export default function Experience() {
 
               {/* Right column: PM role */}
               <div style={{ paddingLeft: '28px', position: 'relative', zIndex: 1 }}>
-                <div style={{ paddingTop: '30px', position: 'relative' }}>
-                  {/* Dot on spine */}
-                  <div
-                    style={{
-                      position: 'absolute',
-                      left: '-6px',
-                      top: '42px',
-                      width: '11px',
-                      height: '11px',
-                      borderRadius: '50%',
-                      background: 'var(--gold)',
-                      zIndex: 2,
-                    }}
-                  />
-                  <RoleTitle>Program Manager (Technical)</RoleTitle>
+                <div style={{ paddingTop: '30px' }}>
+                  <div className="flex items-start gap-[10px]">
+                    <span
+                      style={{
+                        width: '10px', height: '10px', borderRadius: '50%',
+                        background: 'var(--gold)', flexShrink: 0, marginTop: '6px',
+                      }}
+                    />
+                    <RoleTitle>Program Manager (Technical)</RoleTitle>
+                  </div>
                   <RolePeriod>Jul 2023 – Aug 2026</RolePeriod>
                   <p
                     style={{ color: 'var(--txt)', margin: '0 0 24px' }}
@@ -355,8 +330,8 @@ export default function Experience() {
               className="timeline-hist stack-grid"
               style={{
                 display: 'grid',
-                gridTemplateColumns: '.28fr .72fr',
-                gap: '56px',
+                gridTemplateColumns: '.20fr .80fr',
+                gap: '48px',
                 alignItems: 'start',
                 borderTop: '1px solid var(--line)',
                 padding: '28px 0 28px 34px',
