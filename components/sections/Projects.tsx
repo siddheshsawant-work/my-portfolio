@@ -1,6 +1,15 @@
-import { projects } from '@/content/projects';
+'use client';
+
+import { useState } from 'react';
+import { projects, FILTER_TABS } from '@/content/projects';
 
 export default function Projects() {
+  const [active, setActive] = useState<string>('All');
+
+  const filtered = active === 'All'
+    ? projects
+    : projects.filter((p) => p.category.includes(active));
+
   return (
     <section
       id="projects"
@@ -20,13 +29,47 @@ export default function Projects() {
             fontSize: 'clamp(28px,4.4vw,38px)',
             color: '#FAFAF9',
             letterSpacing: '-.01em',
-            margin: '0 0 56px',
+            margin: '0 0 16px',
             fontWeight: 600,
           }}
         >
-          Things I&apos;ve Built
+          Work &amp; Initiatives
         </h2>
+        <p
+          style={{ color: 'rgba(250,250,249,.6)', margin: '0 0 40px', maxWidth: '58ch' }}
+          className="text-[15px] leading-[1.8] font-light"
+        >
+          Selected work and initiatives from recent times.
+        </p>
 
+        {/* Filter tabs */}
+        <div className="flex flex-wrap gap-[10px]" style={{ marginBottom: '40px' }}>
+          {FILTER_TABS.map((tab) => {
+            const isActive = active === tab;
+            return (
+              <button
+                key={tab}
+                type="button"
+                onClick={() => setActive(tab)}
+                style={{
+                  background: isActive ? 'var(--gold-on-deep)' : 'transparent',
+                  color: isActive ? 'var(--deep)' : 'rgba(250,250,249,.65)',
+                  border: isActive ? '1px solid var(--gold-on-deep)' : '1px solid rgba(200,155,60,.4)',
+                  padding: '8px 18px',
+                  borderRadius: '100px',
+                  cursor: 'pointer',
+                  transition: 'all 150ms ease',
+                  fontWeight: isActive ? 500 : 400,
+                }}
+                className="text-[12px] tracking-[.08em] uppercase"
+              >
+                {tab}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Cards grid */}
         <div
           style={{
             display: 'grid',
@@ -34,7 +77,7 @@ export default function Projects() {
             gap: '28px',
           }}
         >
-          {projects.map((project) => (
+          {filtered.map((project) => (
             <article
               key={project.index}
               style={{
@@ -71,9 +114,28 @@ export default function Projects() {
               {/* Accent rule */}
               <div style={{ background: 'var(--gold-on-deep)', width: '40px', height: '2px' }} />
 
+              {/* Category badges */}
+              <div className="flex flex-wrap gap-[8px]">
+                {project.category.map((cat) => (
+                  <span
+                    key={cat}
+                    style={{
+                      color: 'var(--gold-on-deep)',
+                      border: '1px solid rgba(200,155,60,.5)',
+                      background: 'rgba(200,155,60,.08)',
+                      padding: '4px 10px',
+                      borderRadius: '4px',
+                    }}
+                    className="text-[11px] font-medium tracking-[.08em] uppercase"
+                  >
+                    {cat}
+                  </span>
+                ))}
+              </div>
+
               {/* Lead */}
               <p
-                style={{ color: 'var(--gold-on-deep)', margin: 0 }}
+                style={{ color: 'rgba(250,250,249,.85)', margin: 0 }}
                 className="text-[14.5px] font-medium tracking-[.02em]"
               >
                 {project.lead}
