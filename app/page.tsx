@@ -7,7 +7,6 @@ import Experience from '@/components/sections/Experience';
 import Projects from '@/components/sections/Projects';
 import Credentials from '@/components/sections/Credentials';
 import Resume from '@/components/sections/Resume';
-import LinkedIn from '@/components/sections/LinkedIn';
 import Contact from '@/components/sections/Contact';
 
 export default function Home() {
@@ -22,7 +21,6 @@ export default function Home() {
         <Projects />
         <Credentials />
         <Resume />
-        <LinkedIn />
         <Contact />
       </main>
       <Footer />

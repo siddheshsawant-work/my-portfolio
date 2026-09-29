@@ -12,7 +12,7 @@ const NAV_LINKS = [
   { href: '#contact', label: 'Contact', id: 'contact' },
 ];
 
-const SECTION_IDS = ['top', 'about', 'skills', 'experience', 'projects', 'credentials', 'resume', 'linkedin', 'contact'];
+const SECTION_IDS = ['top', 'about', 'skills', 'experience', 'projects', 'credentials', 'resume', 'contact'];
 
 export default function Header() {
   const [active, setActive] = useState('top');
@@ -69,7 +69,7 @@ export default function Header() {
   };
 
   const isActive = (id: string) => {
-    if (id === 'contact') return active === 'contact' || active === 'linkedin';
+    if (id === 'contact') return active === 'contact';
     return active === id;
   };
 

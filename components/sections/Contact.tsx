@@ -49,7 +49,7 @@ export default function Contact() {
           style={{ color: 'var(--gold)' }}
           className="m-0 mb-[14px] text-[12px] font-medium tracking-[.22em] uppercase"
         >
-          08 / Contact
+          07 / Contact
         </p>
         <h2
           style={{
@@ -238,6 +238,25 @@ export default function Contact() {
                 className="text-[13px] leading-[1.7] hover:text-[var(--gold)] transition-colors duration-200"
               >
                 linkedin.com/in/siddhesh-sawant-0283349
+                <span style={{ fontSize: '15px', lineHeight: 1, flexShrink: 0 }}>↗</span>
+              </a>
+            </div>
+
+            <div>
+              <p
+                style={{ color: 'var(--gold)', margin: '0 0 10px' }}
+                className="text-[11.5px] font-medium tracking-[.14em] uppercase"
+              >
+                GitHub
+              </p>
+              <a
+                href="https://github.com/siddheshsawant-work"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: 'var(--navy)', fontFamily: 'ui-monospace, Menlo, monospace', wordBreak: 'break-all', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+                className="text-[13px] leading-[1.7] hover:text-[var(--gold)] transition-colors duration-200"
+              >
+                github.com/siddheshsawant-work
                 <span style={{ fontSize: '15px', lineHeight: 1, flexShrink: 0 }}>↗</span>
               </a>
             </div>
