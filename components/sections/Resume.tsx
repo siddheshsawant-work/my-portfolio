@@ -36,7 +36,7 @@ export default function Resume() {
                 fontWeight: 600,
               }}
             >
-              Two formats, one story.
+              PDF or Word — take your pick.
             </h2>
             <p
               style={{ color: 'var(--txt)', opacity: 0.85, margin: 0 }}

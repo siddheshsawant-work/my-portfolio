@@ -207,12 +207,13 @@ export default function Contact() {
             }}
           >
             <div>
-              <p
-                style={{ color: 'var(--gold)', margin: '0 0 10px' }}
-                className="text-[11.5px] font-medium tracking-[.14em] uppercase"
-              >
-                Email
-              </p>
+              <div style={{ color: 'var(--gold)', margin: '0 0 10px', display: 'flex', alignItems: 'center', gap: '7px' }}>
+                <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <rect x="1" y="2.5" width="12" height="9" rx="1.2"/>
+                  <polyline points="1,4 7,8.5 13,4"/>
+                </svg>
+                <span className="text-[11.5px] font-medium tracking-[.14em] uppercase">Email</span>
+              </div>
               <a
                 href="mailto:siddheshsawant5789@gmail.com"
                 style={{ color: 'var(--navy)', fontFamily: 'ui-monospace, Menlo, monospace', wordBreak: 'break-all', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
@@ -224,12 +225,15 @@ export default function Contact() {
             </div>
 
             <div>
-              <p
-                style={{ color: 'var(--gold)', margin: '0 0 10px' }}
-                className="text-[11.5px] font-medium tracking-[.14em] uppercase"
-              >
-                LinkedIn
-              </p>
+              <div style={{ color: 'var(--gold)', margin: '0 0 10px', display: 'flex', alignItems: 'center', gap: '7px' }}>
+                <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <rect x="1" y="1" width="12" height="12" rx="2"/>
+                  <rect x="3.4" y="5.5" width="1.5" height="5" fill="currentColor" stroke="none"/>
+                  <circle cx="4.15" cy="3.7" r=".85" fill="currentColor" stroke="none"/>
+                  <path d="M7 10.5V7.75a1.75 1.75 0 013.5 0v2.75" strokeLinecap="round"/>
+                </svg>
+                <span className="text-[11.5px] font-medium tracking-[.14em] uppercase">LinkedIn</span>
+              </div>
               <a
                 href="https://in.linkedin.com/in/siddhesh-sawant-0283349"
                 target="_blank"
@@ -243,12 +247,12 @@ export default function Contact() {
             </div>
 
             <div>
-              <p
-                style={{ color: 'var(--gold)', margin: '0 0 10px' }}
-                className="text-[11.5px] font-medium tracking-[.14em] uppercase"
-              >
-                GitHub
-              </p>
+              <div style={{ color: 'var(--gold)', margin: '0 0 10px', display: 'flex', alignItems: 'center', gap: '7px' }}>
+                <svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" style={{ flexShrink: 0 }}>
+                  <path d="M8 1C4.13 1 1 4.13 1 8c0 3.09 2.01 5.72 4.79 6.65.35.06.48-.15.48-.34v-1.2c-1.95.42-2.36-.94-2.36-.94-.32-.81-.78-1.02-.78-1.02-.64-.44.05-.43.05-.43.7.05 1.07.72 1.07.72.62 1.07 1.63.76 2.03.58.06-.45.24-.76.44-.93-1.56-.18-3.2-.78-3.2-3.47 0-.77.27-1.4.72-1.89-.07-.18-.31-.9.07-1.87 0 0 .59-.19 1.93.72a6.7 6.7 0 011.76-.24c.6 0 1.2.08 1.76.24 1.34-.91 1.93-.72 1.93-.72.38.97.14 1.69.07 1.87.45.49.72 1.12.72 1.89 0 2.7-1.64 3.29-3.21 3.46.25.22.48.65.48 1.31v1.94c0 .19.13.41.48.34A7.001 7.001 0 0015 8c0-3.87-3.13-7-7-7z"/>
+                </svg>
+                <span className="text-[11.5px] font-medium tracking-[.14em] uppercase">GitHub</span>
+              </div>
               <a
                 href="https://github.com/siddheshsawant-work"
                 target="_blank"
@@ -262,24 +266,27 @@ export default function Contact() {
             </div>
 
             <div>
-              <p
-                style={{ color: 'var(--gold)', margin: '0 0 10px' }}
-                className="text-[11.5px] font-medium tracking-[.14em] uppercase"
-              >
-                Open to
-              </p>
+              <div style={{ color: 'var(--gold)', margin: '0 0 10px', display: 'flex', alignItems: 'center', gap: '7px' }}>
+                <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <rect x="1" y="4" width="12" height="8.5" rx="1.2"/>
+                  <path d="M4.5 4V2.8a.8.8 0 01.8-.8h3.4a.8.8 0 01.8.8V4"/>
+                  <line x1="1" y1="7" x2="13" y2="7"/>
+                </svg>
+                <span className="text-[11.5px] font-medium tracking-[.14em] uppercase">Open to</span>
+              </div>
               <p style={{ color: 'var(--txt)', margin: 0 }} className="text-[15px] leading-[1.8] font-light">
                 QA Lead/Manager, Program/Product Manager
               </p>
             </div>
 
             <div>
-              <p
-                style={{ color: 'var(--gold)', margin: '0 0 10px' }}
-                className="text-[11.5px] font-medium tracking-[.14em] uppercase"
-              >
-                Location
-              </p>
+              <div style={{ color: 'var(--gold)', margin: '0 0 10px', display: 'flex', alignItems: 'center', gap: '7px' }}>
+                <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <path d="M7 1.5A3.5 3.5 0 003.5 5c0 2.8 3.5 7.5 3.5 7.5S10.5 7.8 10.5 5A3.5 3.5 0 007 1.5z"/>
+                  <circle cx="7" cy="5" r="1.3"/>
+                </svg>
+                <span className="text-[11.5px] font-medium tracking-[.14em] uppercase">Location</span>
+              </div>
               <p style={{ color: 'var(--txt)', margin: 0 }} className="text-[15px] leading-[1.8] font-light">
                 Mumbai, India and open to remote
               </p>
